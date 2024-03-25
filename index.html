@@ -25,12 +25,22 @@
             })
         })
         </script>
-        <script>
+        
+         <script>
         $(document).ready(function() {
             // Funkce pro získání aktuálního data a času
             function getCurrentDateTime() {
                 var date = new Date();
-                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                var options = {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric',
+                    timeZoneName: 'short'
+                };
                 return date.toLocaleDateString('cs-CZ', options);
             }
 
