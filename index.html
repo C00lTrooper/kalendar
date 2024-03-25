@@ -11,11 +11,10 @@
     </head>
 
     <body>
-        <!-- edit -->
-        <h1>Dneska je *date* *day* *time* hodin</h1>
-        <!-- edit -->
         <div class="main">
-            <h1>Dneska je *date* *day* *time* hodin</h1>
+            <!-- edit -->
+            <h1 id="currentDateTime">Dneska je *date* *day* *time* hodin</h1>
+            <!-- edit -->
             <div id="calendar"></div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -26,5 +25,30 @@
             })
         })
         </script>
+        <script>
+        $(document).ready(function() {
+            // Funkce pro získání aktuálního data a času
+            function getCurrentDateTime() {
+                var date = new Date();
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                return date.toLocaleDateString('cs-CZ', options);
+            }
+
+            // Aktualizace obsahu elementu s ID "currentDateTime"
+            function updateCurrentDateTime() {
+                document.getElementById('currentDateTime').innerText = getCurrentDateTime();
+            }
+
+            // Spuštění aktualizace po načtení stránky
+            updateCurrentDateTime();
+
+            // Aktualizace každou minutu
+            setInterval(updateCurrentDateTime, 60000);
+
+            // Inicializace kalendáře
+            $('#calendar').evoCalendar({});
+        })
+    </script>
+</body>
     </body>
 </html>
