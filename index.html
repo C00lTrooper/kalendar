@@ -1,32 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="cs">
 
-    <head>
-        <title>Kalendář</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="evo-calendar.midnight-blue.min.css">
-        <link rel="stylesheet" href="evo-calendar.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalendář</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="evo-calendar.midnight-blue.min.css">
+    <link rel="stylesheet" href="evo-calendar.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
 
-    <body>
-        <div class="main">
-            <!-- edit -->
-            <h1 id="currentDateTime">Dneska je *date* *day* *time* hodin</h1>
-            <!-- edit -->
-            <div id="calendar"></div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-        <script src="evo-calendar.min.js"></script>
-        <script>
-            $(document).ready(function() {
-            $('#calendar').evoCalendar({
-            })
-        })
-        </script>
-        
-         <script>
+<body>
+    <div class="main">
+        <h1 id="currentDate">Dneska je *date* *day*</h1>
+        <h2 id="currentTime"></h2>
+        <div id="calendar"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="evo-calendar.min.js"></script>
+    <script>
         $(document).ready(function() {
             // Funkce pro získání aktuálního data a času
             function getCurrentDateTime() {
@@ -35,29 +31,35 @@
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',
-                    day: 'numeric',
+                    day: 'numeric'
+                };
+                var timeOptions = {
                     hour: 'numeric',
                     minute: 'numeric',
-                    second: 'numeric',
+                    second: 'numeric'
                 };
-                return date.toLocaleDateString('cs-CZ', options);
+                var currentDate = date.toLocaleDateString('cs-CZ', options);
+                var currentTime = date.toLocaleTimeString('cs-CZ', timeOptions);
+                return [currentDate, currentTime];
             }
 
-            // Aktualizace obsahu elementu s ID "currentDateTime"
+            // Aktualizace obsahu elementů s ID "currentDate" a "currentTime"
             function updateCurrentDateTime() {
-                document.getElementById('currentDateTime').innerText = getCurrentDateTime();
+                var [currentDate, currentTime] = getCurrentDateTime();
+                document.getElementById('currentDate').innerText = "Dneska je " + currentDate;
+                document.getElementById('currentTime').innerText = "Čas: " + currentTime;
             }
 
             // Spuštění aktualizace po načtení stránky
             updateCurrentDateTime();
 
-            // Aktualizace každou minutu
-            setInterval(updateCurrentDateTime, 1);
+            // Aktualizace každou sekundu
+            setInterval(updateCurrentDateTime, 1000);
 
             // Inicializace kalendáře
             $('#calendar').evoCalendar({});
         })
     </script>
 </body>
-    </body>
+
 </html>
