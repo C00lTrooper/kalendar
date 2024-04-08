@@ -4,6 +4,10 @@
     font-family: "Oswald", sans-serif;
     bg: black;
 }
+
+h1 {
+    text-align: center;
+    font-size: 35px;
 }
 
 .main{
