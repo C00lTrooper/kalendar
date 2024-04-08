@@ -5,10 +5,16 @@
     bg: black;
 }
 
-h1, h2 {
+h1 {
     text-align: center;
     font-size: 55px;
     color: white;
+}
+
+@media only screen and (max-width: 767px) {
+    h1 {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
 }
 
 .main{
