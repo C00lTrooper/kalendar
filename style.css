@@ -31,3 +31,21 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.weather-widget-container {
+    position: relative;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.tomorrow {
+    position: relative;
+    z-index: 1; /* Ensure the widget is above the calendar */
+}
+
+/* Add CSS to adjust styling of the weather widget powered by Tomorrow.io */
+.tomorrow a {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
