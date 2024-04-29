@@ -39,7 +39,12 @@ h1 {
 }
 
 .tomorrow {
-    position: relative;
+    width: 80%; /* Set the width of the weather widget */
+    position: absolute;
+    top: calc(100% + 20px); /* Position below the calendar with a margin */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure the widget is above the background */
 }
 
 /* Add CSS to adjust styling of the weather widget powered by Tomorrow.io */
