@@ -33,13 +33,14 @@ h1 {
 }
 
 .weather-widget-container {
+    width: 80%;
     position: relative;
     margin-top: 20px; /* Adjust margin as needed */
 }
 
 .tomorrow {
     position: relative;
-    z-index: 1; /* Ensure the widget is above the calendar */
+    z-index: 2; /* Ensure the widget is above the calendar */
 }
 
 /* Add CSS to adjust styling of the weather widget powered by Tomorrow.io */
