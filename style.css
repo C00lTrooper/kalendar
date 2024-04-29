@@ -41,7 +41,7 @@ h1 {
 .tomorrow {
     width: 80%; /* Set the width of the weather widget */
     position: absolute;
-    top: calc(80% + 5px); /* Position below the calendar with a margin */
+    top: calc(70% + 5px); /* Position below the calendar with a margin */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1; /* Ensure the widget is above the background */
