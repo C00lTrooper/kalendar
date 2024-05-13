@@ -5,10 +5,11 @@
     background: linear-gradient(45deg, #00246B, #CADCFC);
 }
 
-body {
+html, body {
     margin: 0;
     padding: 0;
     background: linear-gradient(45deg, #00246B, #CADCFC);
+    overflow-x: hidden;
 }
 
 h1 {
