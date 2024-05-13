@@ -25,7 +25,7 @@ h1 {
 .main{
     width: 100%;
     min-height: 100vh; /* Set minimum height to cover the viewport */
-    background: linear-gradient(45deg, #00246B, #CADCFC);
+    background: linear-gradient(45deg, #00246B, #CADCFC) fixed;
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
