@@ -38,12 +38,12 @@ h1 {
 }
 
 .weather-widget-container {
-    width: 80%;
+    width: 100%;
     margin-top: 20px; /* Adjust margin as needed */
 }
 
 .tomorrow {
-    width: 100%; /* Set the width of the weather widget to 100% of its container */
+    width: 80%; /* Set the width of the weather widget to 100% of its container */
     position: relative;
 }
 
