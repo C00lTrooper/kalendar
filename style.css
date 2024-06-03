@@ -38,7 +38,7 @@ h1 {
 }
 
 .weather-widget-container {
-    width: 80%;
+    width: 80vh;
     margin-top: 20px; /* Adjust margin as needed */
 }
 
